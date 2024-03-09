@@ -1,0 +1,86 @@
+project_name: &_project_name !ENV "${LOGNAME}_geobfn"
+exp_name: !SUB ${exp_name}
+debug: !SUB ${debug}
+test: !SUB ${test}
+no_wandb: !SUB ${no_wandb}
+logging_level: !SUB ${logging_level:-warning}
+
+#data
+dataset: 
+  name: "qm9"
+  datadir: !ENV "./dataset/qm9"
+  num_workers: 4
+  n_atom_types: &_n_atom_types 5
+  atom_decoder: ['H', 'C', 'N', 'O', 'F']
+  atomic_nb: [1, 6, 7, 8, 9]
+  n_node_histogram: [0, 0, 0, 1, 4, 5, 9, 16, 49, 124, 362, 807, 1689, 3060, 
+                      5136, 7796, 10644, 13025, 13364, 13832, 9482, 9970, 3393, 
+                      4848, 539, 1506, 48, 266, 0, 25]
+  remove_h: False
+  normalizer_dict: 
+    pos: 2.0
+    one_hot: 1.0
+    charges: 9.0
+  colors_dic: ['#FFFFFF99', 'C7', 'C0', 'C3', 'C1']
+  radius_dic: [0.46, 0.77, 0.77, 0.77, 0.77]
+
+#model
+dynamics:
+  name: "EGNN"
+  in_node_nf: !SUB ${in_node_nf:-16}
+  hidden_nf: 256
+  n_layers: 9
+  sigma1_coord: !SUB ${sigma1_coord:-0.001}
+  sigma1_charges: !SUB ${sigma1_charges:-0.15}
+  bins: !SUB ${bins:-9}
+  beta1: !SUB ${beta1:-2.0}
+  sample_steps: !SUB ${sample_steps:-1000}
+  no_diff_coord: !SUB ${no_diff_coord:-False}
+  charge_discretised_loss: !SUB ${charge_discretised_loss:-True}
+  charge_clamp: !SUB ${charge_clamp:-True}
+  t_min: !SUB ${t_min:-0.0001}
+  
+
+
+optimization:
+  optimizer: "AdamW"
+  batch_size: &_bsize !SUB ${batch_size:-64}
+  lr: !SUB ${lr:-0.0001}
+  epochs: !SUB ${epochs}
+  difftime: !SUB ${difftime:-True}
+  weight_decay: !SUB ${weight_decay:-1e-12}
+  resume: !SUB ${resume:-False}
+  recover_trigger_loss: !SUB ${recover_trigger_loss:-500}
+  skip_count_limit: !SUB ${skip_count_limit:-3}
+  maximum_allowed_norm: !SUB ${maximum_allowed_norm:-10000}
+
+evaluation:
+  eval_data_num: !SUB ${eval_data_num:-1000}
+  batch_size: *_bsize
+  single_bond: False
+
+
+accounting:
+  logdir: &_logdir !PATHJOIN ["./logs/", *_project_name, !SUB "${exp_name}"]
+  wandb_logdir: *_logdir
+  dump_config_path: !PATHJOIN [*_logdir, "config.yaml"]
+  checkpoint_dir: &_checkpoint_dir !PATHJOIN [*_logdir, "checkpoints"]
+  ckpt_pattern: &_ckpt_pattern !SUB "${ckpt_pattern}"
+  checkpoint_path: !PATHJOIN [*_checkpoint_dir, *_ckpt_pattern]
+  generated_mol_dir: !PATHJOIN [*_logdir, "generated_mol"]
+  checkpoint_freq: !SUB ${checkpoint_freq:-20}
+  exp_version: !SUB ${exp_version:-None}
+
+#visualization
+visual:
+  save_mols: True
+  visual_nums: 10
+  visual_chain: True
+
+
+
+
+
+
+
+
