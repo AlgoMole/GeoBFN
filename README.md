@@ -5,7 +5,7 @@
 ## Quick start
 
 
-### environment setup
+### Environment setup
 Clone the repo with `git lfs clone`,
 ```bash
 git lfs clone https://github.com/AlgoMole/GeoBFN.git
