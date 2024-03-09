@@ -21,7 +21,7 @@ make # a make is all you need
 
 > The `make` will automatically build the docker image and run the container. with your home directory mounted to the home directory of the container. **highly recommended**
 > 
-> Ff you need to setup the environment manually, please refer to files `docker/Dockerfile`, `docker/asset/requirements.txt` and `docker/asset/apt_packages.txt`. 
+> If you need to setup the environment manually, please refer to files `docker/Dockerfile`, `docker/asset/requirements.txt` and `docker/asset/apt_packages.txt`. 
 
 ### Train a model on qm9 dataset
 **inside container, find path to your repo. inside `GeoBFN/`** run
