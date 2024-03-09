@@ -18,7 +18,7 @@ PROJ_DIR:=${HOME}
 SHARE_DIR:=${HOME}/share
 TORCH_HOME:=${SHARE_DIR}/torch_home
 
-CHOME:= ${HOME}
+CHOME:= ${HOME}/home
 TO_SHARE_DIR:=${SHARE_DIR}
 TO_PROJ_DIR:=${CHOME}
 TO_TORCH_HOME:=${TO_SHARE_DIR}/torch_home
