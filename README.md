@@ -19,7 +19,7 @@ cd ./GeoBFN/docker
 make # a make is all you need
 ```
 
-> The `make` will automatically build the docker image and run the container. with your home directory mounted to the home directory of the container. **highly recommended**
+> The `make` will automatically build the docker image and run the container. with your host home directory mounted to the `${HOME}/home` directory inside the container. **highly recommended**
 > 
 > If you need to setup the environment manually, please refer to files `docker/Dockerfile`, `docker/asset/requirements.txt` and `docker/asset/apt_packages.txt`. 
 
