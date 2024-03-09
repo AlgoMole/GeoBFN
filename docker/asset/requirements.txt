@@ -1,0 +1,20 @@
+# Dependencies necessary to execute run_docker.py
+ipykernel
+black
+fire
+absl-py==0.13.0
+tqdm
+matplotlib
+numpy
+scipy
+lxml
+pika
+wandb
+imageio
+msgpack
+zuko
+torchdiffeq
+torch_geometric
+torch_scatter
+pytorch_lightning
+overrides

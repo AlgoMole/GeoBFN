@@ -1,0 +1,6 @@
+unzip
+autoconf
+less 
+gpustat 
+tmux
+libxrender1
