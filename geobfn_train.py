@@ -8,7 +8,6 @@ from torch.optim.optimizer import Optimizer
 from core.config.config import Config
 from core.model.bfn.bfn_base import bfn4MolEGNN
 from core.data.qm9_gen import QM9Gen
-from core.data.geom_gen import GeomGen
 import torch
 import os
 import datetime, pytz
@@ -276,22 +275,6 @@ if __name__ == "__main__":
             split="train" if not cfg.test else "test",
         )
         eval_loader = QM9Gen.initiate_evaluation_dataloader(
-            data_num=cfg.evaluation.eval_data_num if not cfg.debug else 50,
-            n_node_histogram=cfg.dataset.n_node_histogram,
-            batch_size=cfg.evaluation.batch_size,
-        )
-    elif cfg.dataset.name == "geom":
-        train_loader = GeomGen(
-            data_dir=cfg.dataset.datadir,
-            batch_size=cfg.optimization.batch_size,
-            n_node_histogram=cfg.dataset.n_node_histogram,
-            debug=cfg.debug,
-            num_workers=cfg.dataset.num_workers,
-            max_mol_len=cfg.dataset.max_mol_len,
-            max_kept_conformers=cfg.dataset.max_kept_conformers,
-            remove_h=cfg.dataset.remove_h,
-        )
-        eval_loader = GeomGen.initiate_evaluation_dataloader(
             data_num=cfg.evaluation.eval_data_num if not cfg.debug else 50,
             n_node_histogram=cfg.dataset.n_node_histogram,
             batch_size=cfg.evaluation.batch_size,
