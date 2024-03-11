@@ -1,6 +1,7 @@
 
 # GeoBFN
->Official implementation of **ICLR2024 Oral** [Unified Generative Modeling of 3D Molecules with Bayesian Flow Networks](https://openreview.net/forum?id=NSVtmmzeRB)
+
+**Official implementation of **ICLR2024 Oral** [Unified Generative Modeling of 3D Molecules with Bayesian Flow Networks](https://openreview.net/forum?id=NSVtmmzeRB)**
 
 ## Prerequisite
 You will need to have a host machine with gpu, and have a docker with `nvidia-container-runtime` enabled, refer to [install guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) if you don't have them installed.
@@ -35,7 +36,7 @@ make # a make is all you need
 make -f train.mk
 ```
 
->[!WARNING]
+>[!CAUTION]
 > - You could encounter **connection error** if your server is in China, you can manually download the dataset from baidu netdisk with (链接: https://pan.baidu.com/s/1EUa58hkPvoYoIiLahbhnaA?pwd=i9wm 提取码: i9wm) and put it in `./GeoBFN` directory. run `make -f train.mk` again after the dataset is downloaded.
 > Alternatively you can use a proxy to alow the script download the dataset automatically.
 
