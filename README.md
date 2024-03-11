@@ -31,14 +31,6 @@ make # a make is all you need
 ```bash
 make -f train.mk
 ```
-or
 
-```bash
-[[ -d dataset ]] || (mkdir dataset; tar -xvf qm9.tar.gz -C data;) # this command need only be run once
-
-python bfn4molgen_train.py --config_file configs/bfn4molgen.yaml --epochs 3000 #--no_wandb #to skip logging to wandb
-```
-> these commands can also be found in `GeoBFN/Makefile`
-> 
 > you probably will be prompted to enter your wandb api key, you can skip this by adding `--no_wandb` to the command
 
