@@ -26,17 +26,24 @@ make # a make is all you need
 > If you need to setup the environment manually, please refer to files `docker/Dockerfile`, `docker/asset/requirements.txt` and `docker/asset/apt_packages.txt`. 
 
 ### Train a model on qm9 dataset
-**<code style="color : green">inside container, find path to your repo.</code> inside `GeoBFN/`** run
 
-> better run command inside a tmux session
+**inside container, find path to your repo. inside `GeoBFN/`** run
+
 
 ```bash
 make -f train.mk
 ```
 
-> You could encounter <code style="color : red">connection error</code> if your server is in China, you can manually download the dataset from baidu netdisk with (链接: https://pan.baidu.com/s/1EUa58hkPvoYoIiLahbhnaA?pwd=i9wm 提取码: i9wm) and put it in `./GeoBFN` directory. run `make -f train.mk` again after the dataset is downloaded.
+>[!WARNING]
+> - You could encounter **connection error** if your server is in China, you can manually download the dataset from baidu netdisk with (链接: https://pan.baidu.com/s/1EUa58hkPvoYoIiLahbhnaA?pwd=i9wm 提取码: i9wm) and put it in `./GeoBFN` directory. run `make -f train.mk` again after the dataset is downloaded.
 > Alternatively you can use a proxy to alow the script download the dataset automatically.
-> 
-> You probably will be prompted to enter your wandb api key, you can skip this by adding `--no_wandb` to the command
+
+> [!NOTE]
+> - You probably will be prompted to enter your wandb api key, you can skip this by adding `--no_wandb` to the command
+
+> [!TIP]
+> - Better run the training command inside a tmux session, as it takes long time to finish training
+> - exiting from container wound't stop the container, run `make` from host at `GeoBFN/docker` to log in the running container again. if really need to kill the container run `make kill` from `GeoBFN/docker`.
+
 
 
