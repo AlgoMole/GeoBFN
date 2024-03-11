@@ -3,7 +3,7 @@
 >Official implementation of **ICLR2024 Oral** [Unified Generative Modeling of 3D Molecules with Bayesian Flow Networks](https://openreview.net/forum?id=NSVtmmzeRB)
 
 ## Prerequisite
-You will need to have a host machine with gpu, and have a docker with nvidia-container-runtime enabled, refer to [install guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) if you don't have them installed.
+You will need to have a host machine with gpu, and have a docker with `nvidia-container-runtime` enabled, refer to [install guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) if you don't have them installed.
 
 ## Quick start
 
