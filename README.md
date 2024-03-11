@@ -21,9 +21,10 @@ cd ./GeoBFN/docker
 make # a make is all you need
 ```
 
-> The `make` will automatically build the docker image and run the container. with your host home directory mounted to the `${HOME}/home` directory inside the container. **highly recommended**
+> [!NOTE]
+> - The `make` will automatically build the docker image and run the container. with your host home directory mounted to the `${HOME}/home` directory inside the container. **highly recommended**
 > 
-> If you need to setup the environment manually, please refer to files `docker/Dockerfile`, `docker/asset/requirements.txt` and `docker/asset/apt_packages.txt`. 
+> - If you need to setup the environment manually, please refer to files `docker/Dockerfile`, `docker/asset/requirements.txt` and `docker/asset/apt_packages.txt`. 
 
 ### Train a model on qm9 dataset
 
@@ -42,7 +43,8 @@ make -f train.mk
 > - You probably will be prompted to enter your wandb api key, you can skip this by adding `--no_wandb` to the command
 
 > [!TIP]
-> - Better run the training command inside a tmux session, as it takes long time to finish training
+> - Better run the training command inside a tmux session, as it takes long time to finish training.
+> 
 > - exiting from container wound't stop the container, run `make` from host at `GeoBFN/docker` to log in the running container again. if really need to kill the container run `make kill` from `GeoBFN/docker`.
 
 
