@@ -32,7 +32,8 @@ make # a make is all you need
 make -f train.mk
 ```
 
-> data is stored on google drive you probably will also need to setup proxy `export https_proxy=<your_proxy> http_proxy=<your_proxy>`
+> data is stored on google drive you probably will also need to setup proxy: 
+> - `export https_proxy=<your_proxy> http_proxy=<your_proxy>`
 > 
 > you probably will be prompted to enter your wandb api key, you can skip this by adding `--no_wandb` to the command
 
