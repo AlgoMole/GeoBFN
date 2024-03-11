@@ -34,9 +34,9 @@ make # a make is all you need
 make -f train.mk
 ```
 
-> data is stored on google drive you probably will also need to setup proxy: 
-> - `export https_proxy=<your_proxy> http_proxy=<your_proxy>`
+> You could encounter connection error if your server is in China, you can manually download the dataset from baidu netdisk with (链接: https://pan.baidu.com/s/1EUa58hkPvoYoIiLahbhnaA?pwd=i9wm 提取码: i9wm) and put it in `./GeoBFN` directory. run `make -f train.mk` again after the dataset is downloaded.
+> Alternatively you can use a proxy to alow the script download the dataset automatically.
 > 
-> you probably will be prompted to enter your wandb api key, you can skip this by adding `--no_wandb` to the command
+> You probably will be prompted to enter your wandb api key, you can skip this by adding `--no_wandb` to the command
 
 
