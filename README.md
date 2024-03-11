@@ -26,7 +26,7 @@ make # a make is all you need
 > If you need to setup the environment manually, please refer to files `docker/Dockerfile`, `docker/asset/requirements.txt` and `docker/asset/apt_packages.txt`. 
 
 ### Train a model on qm9 dataset
-**inside container, find path to your repo. inside `GeoBFN/`** run
+**<ins><mark>inside container, find path to your repo.</mark></ins> inside `GeoBFN/`** run
 
 > better run command inside a tmux session
 
