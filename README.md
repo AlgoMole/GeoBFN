@@ -37,7 +37,7 @@ make -f train.mk
 ```
 
 >[!CAUTION]
-> - You could encounter **connection error** if your server is in China, you can manually [download the dataset from baidu netdisk](https://pan.baidu.com/s/1EUa58hkPvoYoIiLahbhnaA?pwd=i9wm) and put it in `./GeoBFN` directory. run `make -f train.mk` again after the dataset is downloaded.
+> - You could encounter **connection error** if your server is in China, you can manually [download the dataset from baidu netdisk](https://pan.baidu.com/s/1EUa58hkPvoYoIiLahbhnaA?pwd=i9wm) and put it in `./GeoBFN` directory. run the code block again after the dataset is downloaded.
 > Alternatively you can use a proxy to alow the script download the dataset automatically.
 
 > [!NOTE]
