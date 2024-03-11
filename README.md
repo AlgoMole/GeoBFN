@@ -29,7 +29,7 @@ make # a make is all you need
 
 ### Train a model on qm9 dataset
 
-**inside container, find path to your repo. inside `GeoBFN/`** run
+**Inside container, find path to your repo. inside `GeoBFN/`** run
 
 
 ```bash
