@@ -22,6 +22,11 @@ if ! [ -x "$(command -v nvidia-container-toolkit)" ]; then
     && systemctl restart docker
 fi
 
-usermod -aG docker $USER
+
+if [ -z "$SUDO_USER" ]; then
+    #read user from input
+    read -p "Please enter the username of the user you want to add to the docker group: " SUDO_USER
+fi
+usermod -aG docker $SUDO_USER
 
 
