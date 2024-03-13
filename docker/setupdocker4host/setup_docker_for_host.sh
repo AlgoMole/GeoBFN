@@ -23,10 +23,17 @@ if ! [ -x "$(command -v nvidia-container-toolkit)" ]; then
 fi
 
 
-if [ -z "$SUDO_USER" ]; then
-    #read user from input
-    read -p "Please enter the username of the user you want to add to the docker group: " SUDO_USER
+if groups "$USER_NAME" | grep -q "\bdocker\b"; then
+    echo ""
+else
+    if [ -z "$SUDO_USER" ]; then
+        #read user from input
+        read -p "Please enter the username of the user you want to add to the docker group: " SUDO_USER
+    fi
+    usermod -aG docker $SUDO_USER
+    newgrp docker
 fi
-usermod -aG docker $SUDO_USER
+
+
 
 
