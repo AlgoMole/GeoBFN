@@ -127,4 +127,3 @@ _setup_gitconfig:
 		fi; \
 		cp ~/.gitconfig asset/gitconfig; \
 	fi
-	
