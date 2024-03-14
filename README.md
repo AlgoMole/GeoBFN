@@ -40,13 +40,14 @@ make # a make is all you need
 make -f train.mk
 ```
 
+> [!NOTE]
+> - this command will automatically attempt to download dataset if not exist, and run training script `python geobfn_train.py --config_file configs/bfn4molgen.yaml --epochs 3000` on a default gpu, if you want to change the default gpu, you run `export CUDA_VISIBLE_DEVICES=<gpu_id>` before the `make -f train.mk` command.
+> - Comment/delete the `--no_wandb` option in `train.mk` if you want to use wandb to log the training process. You probably will be prompted to enter your wandb api key.
+
 >[!CAUTION]
 > - You could encounter **connection error** if your server is in China, you can manually [download the dataset from baidu netdisk](https://pan.baidu.com/s/1EUa58hkPvoYoIiLahbhnaA?pwd=i9wm) and put it in `./GeoBFN` directory with `scp <path/to/local/qm9.tar.gz> <username>@<remotehost>:<path/to/remote/GeoBFN/>`. run the script block again after the dataset is downloaded.
 > 
 > - Alternatively you can use a proxy to alow the script download the dataset automatically.
-
-> [!NOTE]
-> - You probably will be prompted to enter your wandb api key, you can skip this by adding `--no_wandb` to the command
 
 > [!TIP]
 > - Better run the training command inside a tmux session, as it takes long time to finish training.
