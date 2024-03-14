@@ -4,7 +4,7 @@
 **Official implementation of **ICLR2024 Oral** [Unified Generative Modeling of 3D Molecules with Bayesian Flow Networks](https://openreview.net/forum?id=NSVtmmzeRB)**
 
 ## Prerequisite
-You will need to have a host machine with gpu, and have a docker with `nvidia-container-runtime` enable.
+You will need to have a host machine with gpu, and have a docker with `nvidia-container-runtime` enabled.
 
 > [!TIP]
 > - This repo provide an easy to use script to install docker and nvidia-container-runtime, in `./GeoBFN/docker` run `sudo ./setup_docker_for_host.sh` to setup your host machine.
