@@ -41,8 +41,9 @@ make -f train.mk
 ```
 
 >[!CAUTION]
-> - You could encounter **connection error** if your server is in China, you can manually [download the dataset from baidu netdisk](https://pan.baidu.com/s/1EUa58hkPvoYoIiLahbhnaA?pwd=i9wm) and put it in `./GeoBFN` directory. run the script block again after the dataset is downloaded.
-> Alternatively you can use a proxy to alow the script download the dataset automatically.
+> - You could encounter **connection error** if your server is in China, you can manually [download the dataset from baidu netdisk](https://pan.baidu.com/s/1EUa58hkPvoYoIiLahbhnaA?pwd=i9wm) and put it in `./GeoBFN` directory with `scp <path/to/local/qm9.tar.gz> <username>@<remotehost>:<path/to/remote/GeoBFN/>`. run the script block again after the dataset is downloaded.
+> 
+> - Alternatively you can use a proxy to alow the script download the dataset automatically.
 
 > [!NOTE]
 > - You probably will be prompted to enter your wandb api key, you can skip this by adding `--no_wandb` to the command
