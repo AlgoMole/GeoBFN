@@ -53,6 +53,16 @@ make -f train.mk
 > - Better run the training command inside a tmux session, as it takes long time to finish training.
 > 
 > - exiting from container wound't stop the container, run `make` from host at `GeoBFN/docker` to log in the running container again. if really need to kill the container run `make kill` from `GeoBFN/docker`.
+## Citations
+If you find the idea or code useful for your research, please consider citing
+```
+@article{song2024unified,
+  title={Unified Generative Modeling of 3D Molecules via Bayesian Flow Networks},
+  author={Song, Yuxuan and Gong, Jingjing and Qu, Yanru and Zhou, Hao and Zheng, Mingyue and Liu, Jingjing and Ma, Wei-Ying},
+  journal={arXiv preprint arXiv:2403.15441},
+  year={2024}}
+
+```
 
 
 
