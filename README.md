@@ -1,7 +1,10 @@
 
 # GeoBFN
 
-**Official implementation of **ICLR2024 Oral** [Unified Generative Modeling of 3D Molecules with Bayesian Flow Networks](https://openreview.net/forum?id=NSVtmmzeRB)**
+Official implementation of **ICLR2024 Oral** [Unified Generative Modeling of 3D Molecules with Bayesian Flow Networks](https://openreview.net/forum?id=NSVtmmzeRB)
+
+## Update
+Please refer to our recent work for applying GeoBFN on Structure-based Drug Design(SBDD) at [MolCRAFT: Structure-Based Drug Design in Continuous Parameter Space](https://arxiv.org/abs/2404.12141) (**ICML2024**) with code available at https://github.com/AlgoMole/MolCRAFT.
 
 ## Prerequisite
 You will need to have a host machine with gpu, and have a docker with `nvidia-container-runtime` enabled.
